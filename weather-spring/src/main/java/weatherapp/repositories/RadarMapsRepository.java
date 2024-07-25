@@ -1,4 +1,4 @@
-package weatherapp.repositorys;
+package weatherapp.repositories;
 
 import java.util.UUID;
 
