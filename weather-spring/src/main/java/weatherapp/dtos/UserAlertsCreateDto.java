@@ -1,5 +1,11 @@
 package weatherapp.dtos;
 
-public record UserAlertsCreateDto() {
+import weatherapp.entities.Users;
+import weatherapp.entities.WeatherAlerts;
+
+public record UserAlertsCreateDto(
+		Boolean isRead,
+		Users user,
+		WeatherAlerts weatherAlerts) {
 
 }

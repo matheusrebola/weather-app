@@ -1,5 +1,10 @@
 package weatherapp.dtos;
 
-public record RadarMapsCreateDto() {
+import java.time.LocalDateTime;
+
+public record RadarMapsCreateDto(
+		String locationId,
+		LocalDateTime timestamp,
+		String mapData) {
 
 }
