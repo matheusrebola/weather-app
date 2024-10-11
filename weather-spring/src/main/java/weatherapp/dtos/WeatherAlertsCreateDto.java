@@ -2,8 +2,8 @@ package weatherapp.dtos;
 
 import java.time.LocalDateTime;
 
-import weatherapp.entities.AlertType;
 import weatherapp.entities.Locations;
+import weatherapp.entities.enums.AlertType;
 
 public record WeatherAlertsCreateDto(
 		AlertType alertType,

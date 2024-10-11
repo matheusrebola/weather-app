@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import jakarta.validation.constraints.NotNull;
-import weatherapp.entities.AlertType;
 import weatherapp.entities.Locations;
+import weatherapp.entities.enums.AlertType;
 
 public record WeatherAlertsDto(
 		@NotNull UUID id,

@@ -1,7 +1,7 @@
 package weatherapp.dtos;
 
-import weatherapp.entities.TemperatureUnit;
-import weatherapp.entities.WindSpeedUnit;
+import weatherapp.entities.enums.TemperatureUnit;
+import weatherapp.entities.enums.WindSpeedUnit;
 
 public record PreferencesCreateDto(
 		TemperatureUnit temperatureUnit,

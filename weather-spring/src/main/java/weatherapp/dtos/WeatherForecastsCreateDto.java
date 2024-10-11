@@ -2,8 +2,8 @@ package weatherapp.dtos;
 
 import java.time.LocalDateTime;
 
-import weatherapp.entities.Condition;
 import weatherapp.entities.Locations;
+import weatherapp.entities.enums.Condition;
 
 public record WeatherForecastsCreateDto(
 		LocalDateTime date,
