@@ -9,5 +9,6 @@ import weatherapp.entities.RadarMaps;
 
 @Repository
 public interface RadarMapsRepository extends JpaRepository<RadarMaps, UUID> {
-
+  public RadarMaps findByLocationId(String locationId);
+  public RadarMaps findByMapData(String mapData);
 }
