@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a76d31c-dc34-4387-9355-1c076f7168a1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../weather-react/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/react-app-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/reportWebVitals.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/src/setupTests.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-react/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/WeatherSpringApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/LocationsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/LongTermForecastsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/PreferencesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/RadarMapsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/SearchHistoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/UserAlertsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/UsersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/WeatherAlertsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/controllers/WeatherForecastsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/LocationsCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/LocationsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/LongTermCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/LongTermForecastsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/PreferencesCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/PreferencesDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/RadarMapsCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/RadarMapsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/SearchHistoryCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/SearchHistoryDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/UserAlertsCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/UserAlertsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/UsersCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/UsersDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/WeatherAlertsCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/WeatherAlertsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/WeatherForecastsCreateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/dtos/WeatherForecastsDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/Locations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/LongTermForecasts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/Preferences.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/RadarMaps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/SearchHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/UserAlerts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/WeatherAlerts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/WeatherForecasts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/enums/AlertType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/enums/Condition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/enums/TemperatureUnit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/entities/enums/WindSpeedUnit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/LocationsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/LongTermForecastsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/PreferencesMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/RadarMapsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/SearchHistoryMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/UserAlertsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/UsersMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/WeatherAlertsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/mappers/WeatherForecastsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/LocationsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/LongTermForecastsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/PreferencesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/RadarMapsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/SearchHistoryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/UserAlertsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/UsersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/WeatherAlertsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/repositories/WeatherForecastsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/LocationsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/LongTermForecastsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/PreferencesService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/RadarMapsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/SearchHistoryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/UserAlertsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/UsersService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/WeatherAlertsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/services/WeatherForecastsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/LocationsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/LongTermForecastsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/PreferencesView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/RadarMapsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/SearchHistoryView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/UserAlertsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/UsersView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/WeatherAlertsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/java/weatherapp/views/WeatherForecastsView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../weather-spring/src/test/java/weatherapp/WeatherSpringApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2xehtvFakx6xZx0DtwiOtEeCiTM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/mrebola/Documentos/Projetos/weather-app/services"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a76d31c-dc34-4387-9355-1c076f7168a1" name="Changes" comment="" />
+      <created>1748304664911</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748304664911</updated>
+    </task>
+    <servers />
+  </component>
+</project>
