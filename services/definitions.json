@@ -1,0 +1,73 @@
+{
+  "users": [{
+    "name": "guest",
+    "password_hash": "f1F4++Kf9Z0zBxRcz+Y2kZP6ZsA=",
+    "hashing_algorithm": "rabbit_password_hashing_sha256",
+    "tags": "administrator"
+  }],
+  "vhosts": [{ "name": "/" }],
+  "permissions": [{
+    "user": "guest",
+    "vhost": "/",
+    "configure": ".*",
+    "write": ".*",
+    "read": ".*"
+  }],
+  "queues": [{
+    "name": "local.queue",
+    "vhost": "/",
+    "durable": true
+  },
+  {
+    "name": "clima.queue",
+    "vhost": "/",
+    "durable": true
+  },
+  {
+    "name": "notificacao.queue",
+    "vhost": "/",
+    "durable": true
+  }
+  ],
+  "exchanges": [{
+    "name": "local.exchange",
+    "vhost": "/",
+    "type": "direct",
+    "durable": true
+  },
+  {
+    "name": "clima.exchange",
+    "vhost": "/",
+    "type": "direct",
+    "durable": true
+  },
+  {
+    "name": "notificacao.exchange",
+    "vhost": "/",
+    "type": "direct",
+    "durable": true
+  }
+  ],
+  "bindings": [{
+    "source": "local.exchange",
+    "vhost": "/",
+    "destination": "local.queue",
+    "destination_type": "queue",
+    "routing_key": "local.route"
+  },
+  {
+    "source": "clima.exchange",
+    "vhost": "/",
+    "destination": "clima.queue",
+    "destination_type": "queue",
+    "routing_key": "clima.route"
+  },
+  {
+    "source": "notificacao.exchange",
+    "vhost": "/",
+    "destination": "notificacao.queue",
+    "destination_type": "queue",
+    "routing_key": "notificacao.route"
+  }
+  ]
+}
