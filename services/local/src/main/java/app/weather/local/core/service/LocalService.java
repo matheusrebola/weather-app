@@ -1,5 +1,6 @@
 package app.weather.local.core.service;
 
+import app.weather.local.core.consumer.LocalConsumer;
 import app.weather.local.core.document.Analise;
 import app.weather.local.core.document.Usuario;
 import app.weather.local.core.document.enums.EAnalise;
@@ -20,6 +21,7 @@ public class LocalService {
     private final AnaliseRepository analiseRepository;
     private final AnaliseMapper analiseMapper;
     private final LocalProducer localProducer;
+    private final LocalConsumer localConsumer;
 
     public Usuario salvar(Usuario usuario) {
         return localRepository.save(usuario);
@@ -54,15 +56,17 @@ public class LocalService {
 
     private void enviarParaFila(Usuario usuario){
         localProducer.enviarUsuario(usuario);
-        removerDeAnalises(usuario.getId());
+        removerDeAnalises(usuario);
     }
 
-    private void removerDeAnalises(String id){
-        analiseRepository.deleteUsuariosById(id);
+    private void removerDeAnalises(Usuario usuario){
+        if (localConsumer.verificarPostagem(usuario)){
+            analiseRepository.deleteUsuariosById(usuario.getId());
+        }
     }
 
     private void percorrerLista(List<Usuario> usuarios){
-        usuarios.stream().forEach(usuario -> enviarParaFila(usuario));
+        usuarios.forEach(this::enviarParaFila);
     }
 
     private void salvar(Analise analise){
