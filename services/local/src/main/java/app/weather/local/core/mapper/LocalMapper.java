@@ -1,10 +1,15 @@
 package app.weather.local.core.mapper;
 
 import app.weather.local.core.document.Dispositivo;
+import app.weather.local.core.document.Local;
 import app.weather.local.core.document.Usuario;
 import app.weather.local.core.dto.DispositivoDTO;
+import app.weather.local.core.dto.LocalDTO;
 import app.weather.local.core.dto.UsuarioDTO;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class LocalMapper {
@@ -29,6 +34,35 @@ public class LocalMapper {
                 .modelo(dto.getModelo())
                 .mac(dto.getMac())
                 .token(dto.getToken())
+                .build();
+    }
+
+    public Usuario map(String id, UsuarioDTO dto) {
+        return Usuario.builder()
+                .id(id)
+                .local(dto.getLocal())
+                .dispositivo(dto.getDispositivo())
+                .analise(dto.getAnalise())
+                .build();
+    }
+
+    public Usuario map(Usuario usuario, List<LocalDTO> dto) {
+        return Usuario.builder()
+                .id(usuario.getId())
+                .local(map(dto))
+                .dispositivo(usuario.getDispositivo())
+                .analise(usuario.getAnalise())
+                .build();
+    }
+
+    public List<Local> map(List<LocalDTO> dto){
+        return dto.stream().map(this::map).collect(Collectors.toList());
+    }
+
+    public Local map(LocalDTO dto){
+        return Local.builder()
+                .latitude(dto.getLatitude())
+                .longitude(dto.getLongitude())
                 .build();
     }
 }

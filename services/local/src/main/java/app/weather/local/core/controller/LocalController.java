@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -47,13 +48,31 @@ public final class LocalController {
     }
 
     @PutMapping("/local/{id}")
-    public void atualizar(@PathVariable String id, @RequestBody LocalDTO dto){
-
+    public ResponseEntity<?> atualizar(@PathVariable String id, @RequestBody List<LocalDTO> dto){
+        try{
+            Usuario usuario = service.encontrarPeloId(id);
+            if (usuario == null){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            service.salvar(mapper.map(usuario, dto));
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @PutMapping("/usuario/{id}")
-    public void atualizar(@PathVariable String id, @RequestBody UsuarioDTO dto){
-
+    public ResponseEntity<?> atualizar(@PathVariable String id, @RequestBody UsuarioDTO dto){
+        try{
+            Usuario usuario = service.encontrarPeloId(id);
+            if (usuario == null){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            service.salvar(mapper.map(usuario.getId(), dto));
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @GetMapping
