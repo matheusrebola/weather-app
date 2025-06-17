@@ -90,17 +90,35 @@ public final class LocalController {
     }
 
     @GetMapping("/{id}")
-    public void buscarPeloId(@PathVariable String id){
-
+    public ResponseEntity<?> buscarPeloId(@PathVariable String id){
+        try{
+            Usuario usuario = service.encontrarPeloId(id);
+            if (usuario == null){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<>(mapper.map(usuario), HttpStatus.OK);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @DeleteMapping
-    public void deletarTodos(){
-
+    public ResponseEntity<?> deletarTodos(){
+        try{
+            service.deletarTodos();
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @DeleteMapping("/{id}")
-    public void deletarPeloId(@PathVariable String id){
-
+    public ResponseEntity<?> deletarPeloId(@PathVariable String id){
+        try {
+            service.deletarPeloId(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

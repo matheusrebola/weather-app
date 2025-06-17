@@ -23,4 +23,12 @@ public class LocalService {
     public List<Usuario> encontrarTodos() {
         return localRepository.findAll();
     }
+
+    public void deletarTodos() {
+        localRepository.deleteAll();
+    }
+
+    public void deletarPeloId(String id) {
+        localRepository.deleteById(id);
+    }
 }
