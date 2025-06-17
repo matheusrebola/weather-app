@@ -1,20 +1,33 @@
 package app.weather.local.core.controller;
 
+import app.weather.local.core.dto.DispositivoDTO;
+import app.weather.local.core.dto.LocalDTO;
+import app.weather.local.core.dto.UsuarioDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/local")
 @RequiredArgsConstructor
-public class LocalController {
+public final class LocalController {
 
     @PostMapping
-    public void receberUsuario(){
+    public void criar(@RequestBody UsuarioDTO dto){
 
     }
 
-    @PutMapping("/{id}")
-    public void atualizarUsuario(@PathVariable String id){
+    @PutMapping("/dispositivo/{id}")
+    public void atualizar(@PathVariable String id, @RequestBody DispositivoDTO dto){
+
+    }
+
+    @PutMapping("/local/{id}")
+    public void atualizar(@PathVariable String id, @RequestBody LocalDTO dto){
+
+    }
+
+    @PutMapping("/usuario/{id}")
+    public void atualizar(@PathVariable String id, @RequestBody UsuarioDTO dto){
 
     }
 
