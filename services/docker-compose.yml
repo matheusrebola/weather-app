@@ -3,7 +3,7 @@ version: '3.9'
 services:
   rabbitmq:
     image: rabbitmq:3.13-management
-    container_name: rabbitmq
+    container_name: weather-rabbit
     ports:
       - "25080:15672"   # UI do RabbitMQ
       - "56720:5672"     # Comunicação AMQP
@@ -19,7 +19,7 @@ services:
 
   mongo:
     image: mongo:7.0
-    container_name: propagandus-mongo
+    container_name: weather-mongo
     ports:
       - "55080:27017"
     environment:
@@ -31,7 +31,7 @@ services:
 
   redis:
     image: redis:7-alpine
-    container_name: propagandus-redis
+    container_name: weather-redis
     ports:
       - "63790:6379"
     volumes:
