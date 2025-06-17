@@ -43,8 +43,12 @@ public class LocalService {
         localRepository.deleteById(id);
     }
 
+    private void salvar(List<Usuario> usuarios){
+        localRepository.saveAll(usuarios);
+    }
+
     @Scheduled(cron = "0 0 0 * * *")
-    public void iniciarSaga(){
+    private void iniciarSaga(){
         try {
             List<Usuario> usuarios = localRepository.findByAnalise(EAnalise.PARA_ANALISE);
             salvar(analiseMapper.map(usuarios));
@@ -63,6 +67,7 @@ public class LocalService {
         EAnalise analise = localConsumer.verificarPostagem(usuario);
         if (analise.equals(EAnalise.ANALISADO)){
             analiseRepository.deleteUsuariosById(usuario.getId());
+            salvar(usuario);
         }
     }
 
@@ -72,5 +77,15 @@ public class LocalService {
 
     private void salvar(Analise analise){
         analiseRepository.save(analise);
+    }
+
+    @Scheduled(cron = "0 0 12 * * *")
+    private void definirParaAnalise(){
+        salvar(settarAnalise( encontrarTodos()));
+    }
+
+    private List<Usuario> settarAnalise(List<Usuario> usuarios){
+        usuarios.forEach(usuario -> usuario.setAnalise(EAnalise.PARA_ANALISE));
+        return usuarios;
     }
 }
