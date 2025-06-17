@@ -14,8 +14,7 @@ import app.weather.local.config.rabbitmq.RabbitMQConfig;
 public class LocalConsumer {
 
     @RabbitListener(queues = RabbitMQConfig.CONSUME_QUEUE)
-    public boolean verificarPostagem(Usuario usuario){
-        EAnalise analise = usuario.getAnalise();
-        return analise.equals(EAnalise.ANALISADO);
+    public EAnalise verificarPostagem(Usuario usuario){
+        return usuario.getAnalise();
     }
 }

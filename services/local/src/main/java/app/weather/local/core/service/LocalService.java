@@ -23,8 +23,8 @@ public class LocalService {
     private final LocalProducer localProducer;
     private final LocalConsumer localConsumer;
 
-    public Usuario salvar(Usuario usuario) {
-        return localRepository.save(usuario);
+    public void salvar(Usuario usuario) {
+        localRepository.save(usuario);
     }
 
     public Usuario encontrarPeloId(String id) {
@@ -60,7 +60,8 @@ public class LocalService {
     }
 
     private void removerDeAnalises(Usuario usuario){
-        if (localConsumer.verificarPostagem(usuario)){
+        EAnalise analise = localConsumer.verificarPostagem(usuario);
+        if (analise.equals(EAnalise.ANALISADO)){
             analiseRepository.deleteUsuariosById(usuario.getId());
         }
     }
