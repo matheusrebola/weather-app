@@ -3,6 +3,8 @@ package app.weather.local.core.controller;
 import app.weather.local.core.dto.DispositivoDTO;
 import app.weather.local.core.dto.LocalDTO;
 import app.weather.local.core.dto.UsuarioDTO;
+import app.weather.local.core.mapper.LocalMapper;
+import app.weather.local.core.service.LocalService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/local")
 @RequiredArgsConstructor
 public final class LocalController {
+    private final LocalService service;
+    private final LocalMapper mapper;
 
     @PostMapping
     public void criar(@RequestBody UsuarioDTO dto){
