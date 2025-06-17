@@ -9,9 +9,12 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMQConfig {
-    public static final String EXCHANGE = "notification.exchange";
-    public static final String ROUTING_KEY = "notification.route";
-    public static final String QUEUE = "notification.queue";
+    // Configuração para CONSUMIR mensagens vindas do serviço Clima
+    public static final String CONSUME_QUEUE = "notificacao.queue";
+
+    // Configuração para PRODUZIR mensagens para o serviço Local
+    public static final String PRODUCE_EXCHANGE = "notificacao.exchange";
+    public static final String PRODUCE_ROUTING_KEY = "notificacao.route";
 
     @Bean
     public Jackson2JsonMessageConverter messageConverter() {
@@ -26,27 +29,15 @@ public class RabbitMQConfig {
         return template;
     }
 
+    // Fila que o serviço Notificação vai CONSUMIR (recebe mensagens do Clima)
     @Bean
-    public Declarables bindings() {
-        return new Declarables(
-                new Queue(QUEUE, true),
-                new DirectExchange(EXCHANGE),
-                BindingBuilder.bind(new Queue(QUEUE)).to(new DirectExchange(EXCHANGE)).with(ROUTING_KEY)
-        );
+    public Queue consumeQueue() {
+        return new Queue(CONSUME_QUEUE, true);
     }
 
+    // Exchange que o serviço Notificação vai usar para PRODUZIR (envia para Local)
     @Bean
-    public Queue queue() {
-        return new Queue(QUEUE, true);
-    }
-
-    @Bean
-    public DirectExchange exchange() {
-        return new DirectExchange(EXCHANGE);
-    }
-
-    @Bean
-    public Binding binding(Queue queue, DirectExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
+    public DirectExchange produceExchange() {
+        return new DirectExchange(PRODUCE_EXCHANGE);
     }
 }

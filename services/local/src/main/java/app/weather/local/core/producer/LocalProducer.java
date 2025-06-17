@@ -15,8 +15,8 @@ public class LocalProducer {
 
     public void enviarUsuario(Usuario usuario) {
         rabbitTemplate.convertAndSend(
-                RabbitMQConfig.EXCHANGE,
-                RabbitMQConfig.ROUTING_KEY,
+                RabbitMQConfig.PRODUCE_EXCHANGE,
+                RabbitMQConfig.PRODUCE_ROUTING_KEY,
                 usuario
         );
     }

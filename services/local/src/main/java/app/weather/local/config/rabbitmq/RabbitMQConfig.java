@@ -10,10 +10,12 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 
 @Configuration
 public class RabbitMQConfig {
+    // Configuração para CONSUMIR mensagens vindas do serviço Notificação
+    public static final String CONSUME_QUEUE = "local.queue";
 
-    public static final String EXCHANGE = "local.exchange";
-    public static final String ROUTING_KEY = "local.route";
-    public static final String QUEUE = "local.queue";
+    // Configuração para PRODUZIR mensagens para o serviço Clima
+    public static final String PRODUCE_EXCHANGE = "local.exchange";
+    public static final String PRODUCE_ROUTING_KEY = "local.route";
 
     @Bean
     public Jackson2JsonMessageConverter messageConverter() {
@@ -28,27 +30,15 @@ public class RabbitMQConfig {
         return template;
     }
 
+    // Fila que o serviço Local vai CONSUMIR (recebe mensagens do Notificação)
     @Bean
-    public Declarables bindings() {
-        return new Declarables(
-                new Queue(QUEUE, true),
-                new DirectExchange(EXCHANGE),
-                BindingBuilder.bind(new Queue(QUEUE)).to(new DirectExchange(EXCHANGE)).with(ROUTING_KEY)
-        );
+    public Queue consumeQueue() {
+        return new Queue(CONSUME_QUEUE, true);
     }
 
+    // Exchange que o serviço Local vai usar para PRODUZIR (envia para Clima)
     @Bean
-    public Queue queue() {
-        return new Queue(QUEUE, true);
-    }
-
-    @Bean
-    public DirectExchange exchange() {
-        return new DirectExchange(EXCHANGE);
-    }
-
-    @Bean
-    public Binding binding(Queue queue, DirectExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY);
+    public DirectExchange produceExchange() {
+        return new DirectExchange(PRODUCE_EXCHANGE);
     }
 }
