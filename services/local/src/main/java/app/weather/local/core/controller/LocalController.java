@@ -76,8 +76,17 @@ public final class LocalController {
     }
 
     @GetMapping
-    public void buscarTodos(){
-
+    public ResponseEntity<?> buscarTodos(){
+        try {
+            List<Usuario> usuarios = service.encontrarTodos();
+            if (usuarios.isEmpty()){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            List<UsuarioDTO> dtos = mapper.map(usuarios);
+            return new ResponseEntity<>(dtos, HttpStatus.OK);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @GetMapping("/{id}")

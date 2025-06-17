@@ -5,6 +5,8 @@ import app.weather.local.core.repository.LocalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class LocalService {
@@ -16,5 +18,9 @@ public class LocalService {
 
     public Usuario encontrarPeloId(String id) {
         return localRepository.findById(id).orElse(null);
+    }
+
+    public List<Usuario> encontrarTodos() {
+        return localRepository.findAll();
     }
 }

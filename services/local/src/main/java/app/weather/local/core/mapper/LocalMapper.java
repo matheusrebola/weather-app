@@ -49,20 +49,32 @@ public class LocalMapper {
     public Usuario map(Usuario usuario, List<LocalDTO> dto) {
         return Usuario.builder()
                 .id(usuario.getId())
-                .local(map(dto))
+                .local(dto.stream().map(local ->
+                        Local.builder()
+                                .latitude(local.getLatitude())
+                                .longitude(local.getLongitude())
+                                .build()).collect(Collectors.toList()))
                 .dispositivo(usuario.getDispositivo())
                 .analise(usuario.getAnalise())
                 .build();
-    }
-
-    public List<Local> map(List<LocalDTO> dto){
-        return dto.stream().map(this::map).collect(Collectors.toList());
     }
 
     public Local map(LocalDTO dto){
         return Local.builder()
                 .latitude(dto.getLatitude())
                 .longitude(dto.getLongitude())
+                .build();
+    }
+
+    public List<UsuarioDTO> map(List<Usuario> usuarios) {
+        return usuarios.stream().map(usuario -> map(usuario)).collect(Collectors.toList());
+    }
+
+    public UsuarioDTO map(Usuario usuario){
+        return UsuarioDTO.builder()
+                .local(usuario.getLocal())
+                .dispositivo(usuario.getDispositivo())
+                .analise(usuario.getAnalise())
                 .build();
     }
 }
