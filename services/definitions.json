@@ -14,20 +14,20 @@
     "read": ".*"
   }],
   "queues": [{
-    "name": "local.queue",
-    "vhost": "/",
-    "durable": true
-  },
-  {
     "name": "clima.queue",
     "vhost": "/",
     "durable": true
   },
-  {
-    "name": "notificacao.queue",
-    "vhost": "/",
-    "durable": true
-  }
+    {
+      "name": "notificacao.queue",
+      "vhost": "/",
+      "durable": true
+    },
+    {
+      "name": "local.queue",
+      "vhost": "/",
+      "durable": true
+    }
   ],
   "exchanges": [{
     "name": "local.exchange",
@@ -35,39 +35,39 @@
     "type": "direct",
     "durable": true
   },
-  {
-    "name": "clima.exchange",
-    "vhost": "/",
-    "type": "direct",
-    "durable": true
-  },
-  {
-    "name": "notificacao.exchange",
-    "vhost": "/",
-    "type": "direct",
-    "durable": true
-  }
+    {
+      "name": "clima.exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true
+    },
+    {
+      "name": "notificacao.exchange",
+      "vhost": "/",
+      "type": "direct",
+      "durable": true
+    }
   ],
   "bindings": [{
     "source": "local.exchange",
     "vhost": "/",
-    "destination": "local.queue",
+    "destination": "clima.queue",
     "destination_type": "queue",
     "routing_key": "local.route"
   },
-  {
-    "source": "clima.exchange",
-    "vhost": "/",
-    "destination": "clima.queue",
-    "destination_type": "queue",
-    "routing_key": "clima.route"
-  },
-  {
-    "source": "notificacao.exchange",
-    "vhost": "/",
-    "destination": "notificacao.queue",
-    "destination_type": "queue",
-    "routing_key": "notificacao.route"
-  }
+    {
+      "source": "clima.exchange",
+      "vhost": "/",
+      "destination": "notificacao.queue",
+      "destination_type": "queue",
+      "routing_key": "clima.route"
+    },
+    {
+      "source": "notificacao.exchange",
+      "vhost": "/",
+      "destination": "local.queue",
+      "destination_type": "queue",
+      "routing_key": "notificacao.route"
+    }
   ]
 }
