@@ -6,7 +6,7 @@ services:
     container_name: weather-rabbit
     ports:
       - "25080:15672"   # UI do RabbitMQ
-      - "56720:5672"     # Comunicação AMQP
+      - "5672:5672"     # Comunicação AMQP
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
@@ -23,9 +23,9 @@ services:
     ports:
       - "55080:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: propagandus_user
-      MONGO_INITDB_ROOT_PASSWORD: propagandus_pass
-      MONGO_INITDB_DATABASE: propagandus_db
+      MONGO_INITDB_ROOT_USERNAME: weatherapp
+      MONGO_INITDB_ROOT_PASSWORD: weatherapp
+      MONGO_INITDB_DATABASE: weatherapp
     volumes:
       - mongo_data:/data/db
 
