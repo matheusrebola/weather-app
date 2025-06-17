@@ -13,4 +13,8 @@ public class LocalService {
     public Usuario salvar(Usuario usuario) {
         return localRepository.save(usuario);
     }
+
+    public Usuario encontrarPeloId(String id) {
+        return localRepository.findById(id).orElse(null);
+    }
 }

@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/local")
 @RequiredArgsConstructor
@@ -31,8 +33,17 @@ public final class LocalController {
     }
 
     @PutMapping("/dispositivo/{id}")
-    public void atualizar(@PathVariable String id, @RequestBody DispositivoDTO dto){
-
+    public ResponseEntity<?> atualizar(@PathVariable String id, @RequestBody DispositivoDTO dto){
+        try{
+            Usuario usuario = service.encontrarPeloId(id);
+            if (usuario == null){
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            service.salvar(mapper.map(usuario, dto));
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @PutMapping("/local/{id}")
