@@ -8,6 +8,7 @@ import app.weather.local.core.producer.LocalProducer;
 import app.weather.local.core.repository.AnaliseRepository;
 import app.weather.local.core.repository.LocalRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -40,6 +41,7 @@ public class LocalService {
         localRepository.deleteById(id);
     }
 
+    @Scheduled(cron = "0 0 0 * * *")
     public void iniciarSaga(){
         try {
             List<Usuario> usuarios = localRepository.findByAnalise(EAnalise.PARA_ANALISE);
