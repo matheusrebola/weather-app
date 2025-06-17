@@ -1,11 +1,14 @@
 package app.weather.local.core.controller;
 
+import app.weather.local.core.document.Usuario;
 import app.weather.local.core.dto.DispositivoDTO;
 import app.weather.local.core.dto.LocalDTO;
 import app.weather.local.core.dto.UsuarioDTO;
 import app.weather.local.core.mapper.LocalMapper;
 import app.weather.local.core.service.LocalService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,8 +19,15 @@ public final class LocalController {
     private final LocalMapper mapper;
 
     @PostMapping
-    public void criar(@RequestBody UsuarioDTO dto){
-
+    public ResponseEntity<?> criar(@RequestBody UsuarioDTO dto){
+        Usuario usuario = mapper.map(dto);
+        try{
+            service.salvar(usuario);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (RuntimeException e) {
+            //salvar no redis
+            throw new RuntimeException(e);
+        }
     }
 
     @PutMapping("/dispositivo/{id}")
