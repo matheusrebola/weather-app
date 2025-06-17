@@ -1,5 +1,6 @@
 package app.weather.local.core.mapper;
 
+import app.weather.local.core.document.Analise;
 import app.weather.local.core.document.Dispositivo;
 import app.weather.local.core.document.Local;
 import app.weather.local.core.document.Usuario;
@@ -77,4 +78,5 @@ public class LocalMapper {
                 .analise(usuario.getAnalise())
                 .build();
     }
+
 }

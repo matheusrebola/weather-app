@@ -1,6 +1,11 @@
 package app.weather.local.core.service;
 
+import app.weather.local.core.document.Analise;
 import app.weather.local.core.document.Usuario;
+import app.weather.local.core.document.enums.EAnalise;
+import app.weather.local.core.mapper.AnaliseMapper;
+import app.weather.local.core.producer.LocalProducer;
+import app.weather.local.core.repository.AnaliseRepository;
 import app.weather.local.core.repository.LocalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,6 +16,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LocalService {
     private final LocalRepository localRepository;
+    private final AnaliseRepository analiseRepository;
+    private final AnaliseMapper analiseMapper;
+    private final LocalProducer localProducer;
 
     public Usuario salvar(Usuario usuario) {
         return localRepository.save(usuario);
@@ -30,5 +38,32 @@ public class LocalService {
 
     public void deletarPeloId(String id) {
         localRepository.deleteById(id);
+    }
+
+    public void iniciarSaga(){
+        try {
+            List<Usuario> usuarios = localRepository.findByAnalise(EAnalise.PARA_ANALISE);
+            salvar(analiseMapper.map(usuarios));
+            percorrerLista(usuarios);
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void enviarParaFila(Usuario usuario){
+        localProducer.enviarUsuario(usuario);
+        removerDeAnalises(usuario.getId());
+    }
+
+    private void removerDeAnalises(String id){
+        analiseRepository.deleteUsuariosById(id);
+    }
+
+    private void percorrerLista(List<Usuario> usuarios){
+        usuarios.stream().forEach(usuario -> enviarParaFila(usuario));
+    }
+
+    private void salvar(Analise analise){
+        analiseRepository.save(analise);
     }
 }
