@@ -1,4 +1,4 @@
 package app.weather.local.core.repository;
 
-public interface ClimaRepository {
+public interface LocalRepository {
 }

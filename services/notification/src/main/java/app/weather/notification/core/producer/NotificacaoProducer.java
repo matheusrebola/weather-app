@@ -1,4 +1,4 @@
 package app.weather.notification.core.producer;
 
-public class ClimaProducer {
+public class NotificacaoProducer {
 }
